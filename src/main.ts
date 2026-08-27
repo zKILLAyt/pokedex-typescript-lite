@@ -1,17 +1,17 @@
+import { TerminalController } from "./controllers/TerminalController";
+import { CatalogoPokemon } from "./models/CatalogoPokemon";
 import { PokeApiService } from "./services/PokeApiService";
 
 async function main(): Promise<void> {
   const pokeApiService = new PokeApiService();
+  const catalogo = new CatalogoPokemon();
 
-  const pikachu = await pokeApiService.buscarPokemon("pikachu");
-
-  console.log(pikachu);
-
-  const pokemonInexistente = await pokeApiService.buscarPokemon(
-    "pokemon-inexistente",
+  const terminalController = new TerminalController(
+    pokeApiService,
+    catalogo,
   );
 
-  console.log(pokemonInexistente);
+  await terminalController.executar();
 }
 
 main();
