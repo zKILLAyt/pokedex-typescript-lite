@@ -14,6 +14,16 @@ A aplicação permite:
 - Listar os Pokémon cadastrados;
 - Remover um Pokémon pelo ID.
 
+## Funcionalidades
+
+- Buscar Pokémon por nome ou ID;
+- Adicionar Pokémon ao catálogo;
+- Impedir Pokémon duplicados;
+- Listar os Pokémon cadastrados;
+- Remover um Pokémon pelo ID;
+- Tratar erros de Pokémon inexistente;
+- Exibir mensagens claras no terminal.
+
 ## Tecnologias utilizadas
 
 - Node.js
@@ -109,20 +119,26 @@ Catálogo atual:
 
 ## Estrutura do projeto
 
-```text
-src/
-├── main.ts
-├── controllers/
-│   └── TerminalController.ts
-├── models/
-│   ├── CatalogoPokemon.ts
-│   └── Pokemon.ts
-├── services/
-│   ├── BoxService.ts
-│   └── PokeApiService.ts
-└── utils/
-    └── textFormatters.ts
-```
+pokedex-typescript-lite/
+│
+├── src/
+│   ├── main.ts
+│   ├── controllers/
+│   │   └── TerminalController.ts
+│   ├── models/
+│   │   ├── CatalogoPokemon.ts
+│   │   ├── Pokemon.ts
+│   │   └── CustomErrors.ts
+│   ├── services/
+│   │   ├── BoxService.ts
+│   │   └── PokeApiService.ts
+│   └── utils/
+│       └── textFormatters.ts
+│
+├── pc_box.json
+├── package.json
+├── tsconfig.json
+└── README.md
 
 ### Descrição dos principais arquivos
 
@@ -133,6 +149,7 @@ src/
 - `PokeApiService.ts` — realiza as consultas à PokeAPI.
 - `BoxService.ts` — serviço reservado para a camada de persistência local.
 - `textFormatters.ts` — espaço destinado às funções utilitárias de formatação.
+- `CustomErrors.ts` — contém classes de erro personalizadas utilizadas no projeto.
 
 ## Git e branches
 

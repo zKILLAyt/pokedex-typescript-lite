@@ -31,6 +31,10 @@ export class CatalogoPokemon {
     });
   }
 
+  obterTodos(): PokemonResumo[] {
+    return [...this.pokemons];
+  }
+
   remover(id: number): void {
     const existe = this.pokemons.some((pokemon) => pokemon.id === id);
 
